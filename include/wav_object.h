@@ -11,7 +11,7 @@ extern "C" {
 
 typedef enum {
     WAV_SRC_EMBED, // WAV file embedded in program memory
-    WAV_SRC_FILE,  // WAV file in SPIFFS filesystem
+    WAV_SRC_SPIFFS,// WAV file in SPIFFS filesystem
     WAV_SRC_MMC,   // WAV file on MMC/SD card
 } wav_source_type_t;
 
@@ -23,7 +23,7 @@ typedef struct {
         } embed;
         struct {
             const char *path; // path in SPIFFS
-        } file;
+        } spiffs;
         struct {
             const char *path; // path on MMC
         } mmc;
@@ -34,8 +34,8 @@ typedef struct {
 #define WAV_DECLARE_EMBED(name, addr) \
     static const wav_obj_t name = { .type = WAV_SRC_EMBED, .embed = { addr } }
 
-#define WAV_DECLARE_FILE(name, path) \
-    static const wav_obj_t name = { .type = WAV_SRC_FILE, .file = { path } }
+#define WAV_DECLARE_SPIFFS(name, path) \
+    static const wav_obj_t name = { .type = WAV_SRC_SPIFFS, .spiffs = { path } }
 
 #define WAV_DECLARE_MMC(name, path) \
     static const wav_obj_t name = { .type = WAV_SRC_MMC, .mmc = { path } }

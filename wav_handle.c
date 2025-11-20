@@ -16,9 +16,9 @@ wav_handle_t *wav_handle_init(const wav_obj_t *src)
     case WAV_SRC_EMBED:
         return wav_backend_embed_create(src->embed.addr);
 
-    case WAV_SRC_FILE:
+    case WAV_SRC_SPIFFS:
     case WAV_SRC_MMC:
-        return wav_backend_file_create(src->file.path);
+        return wav_backend_file_create(src->spiffs.path);
 
     default:
         return NULL;
