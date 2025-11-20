@@ -192,7 +192,6 @@ static void wav_player_task(void *arg)
     struct esp_wav_player *player = arg;
     uint8_t                buf[WAV_BUF_SIZE];
     size_t                 i2s_wr;
-    int                    div;
     while (1) {
         wav_handle_t *h = NULL;
         if (!xQueueReceive(player->queue, &h, portMAX_DELAY))
@@ -215,11 +214,11 @@ static void wav_player_task(void *arg)
             player->state = ESP_WAV_PLAYER_STOPPED;
             continue;
         }
-        div = (h->sample_alignment == 2) ? 2 : 1;
-        i2s_set_clk(player->i2s_num, h->sample_rate / div, h->bit_depth,
-                    (h->num_channels == 2) ? I2S_CHANNEL_STEREO : I2S_CHANNEL_MONO);
+        i2s_set_clk(player->i2s_num, h->sample_rate , h->bit_depth, h->num_channels);
+
         if (player->on_start)
             player->on_start(player, player->on_start_arg);
+
         float vol = player->volume / 100.0f;
         int   bytes_left = h->data_bytes;
         while (!player->stop_request) {
@@ -266,6 +265,7 @@ static void wav_player_task(void *arg)
         wav_handle_free(h);
         if (player->on_end)
             player->on_end(player, player->on_end_arg);
+
         player->state = ESP_WAV_PLAYER_STOPPED;
     }
 }
