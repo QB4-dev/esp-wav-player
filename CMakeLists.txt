@@ -3,7 +3,7 @@ idf_component_register(
         "esp_wav_player.c"
         "wav_handle.c"
         "wav_backend_embed.c"
-        "wav_backend_spiffs.c"
+        "wav_backend_file.c"
     INCLUDE_DIRS
         "include"
     REQUIRES
