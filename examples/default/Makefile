@@ -5,7 +5,7 @@
 
 PROJECT_NAME := wav-demo
 
-#EXTRA_COMPONENT_DIRS = $(PROJECT_PATH)/../../components
+EXTRA_COMPONENT_DIRS = $(PROJECT_PATH)/../..
 
 include $(IDF_PATH)/make/project.mk
 

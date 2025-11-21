@@ -1,3 +1,3 @@
-idf_component_register(SRCS "spiffsgen_example_main.c"
+idf_component_register(SRCS "main.c"
                     INCLUDE_DIRS "."
                     EMBED_TXTFILES "../wav/darude.wav")
