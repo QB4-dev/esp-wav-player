@@ -36,4 +36,4 @@ void          wav_handle_free(wav_handle_t *h);
 // parses header and fills h->size, h->sample_rate, etc.
 int wav_parse_header(wav_handle_t *h);
 
-#endif /* COMPONENTS_ESP_WAV_PLAYER_WAV_HANDLE_H_ */
+#endif /* ESP_WAV_PLAYER_WAV_HANDLE_H_ */
