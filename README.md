@@ -67,7 +67,7 @@ esp_wav_player_set_volume(wav_player, 50); // set initial volume
 
 6. Stop or pause playback as needed.
 
-See examples/default/README.md for example pin mappings and a quickstart for ESP32/ESP8266.
+    See examples/default/README.md for example pin mappings and a quickstart for ESP32/ESP8266.
 
 ## Installation
 
