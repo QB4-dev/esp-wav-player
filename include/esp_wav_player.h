@@ -62,24 +62,24 @@ typedef struct {
  * Use as `esp_wav_player_config_t cfg = ESP_WAV_PLAYER_DEFAULT_CONFIG();`.
  */
 #define ESP_WAV_PLAYER_DEFAULT_CONFIG() \
-    {               \
-    .i2s_num = I2S_NUM_0,                               \
-    .i2s_pin_config = {                                 \
-        .bck_o_en = 1,                                  \
-        .ws_o_en = 1,                                   \
-        .data_out_en = 1,                               \
-    },                                                  \
-    .base_cfg = {                                       \
-        .mode = I2S_MODE_MASTER | I2S_MODE_TX,         \
-        .sample_rate = 22050,                           \
-        .bits_per_sample = 16,                          \
-        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,   \
+    {                                                                          \
+    .i2s_num = I2S_NUM_0,                                                      \
+    .i2s_pin_config = {                                                        \
+        .bck_o_en = 1,                                                         \
+        .ws_o_en = 1,                                                          \
+        .data_out_en = 1,                                                      \
+    },                                                                         \
+    .base_cfg = {                                                              \
+        .mode = I2S_MODE_MASTER | I2S_MODE_TX,                                 \
+        .sample_rate = 22050,                                                  \
+        .bits_per_sample = 16,                                                 \
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                          \
         .communication_format = I2S_COMM_FORMAT_I2S | I2S_COMM_FORMAT_I2S_LSB, \
-        .dma_buf_count = 4,                             \
-        .dma_buf_len = 256,                             \
-        .tx_desc_auto_clear = true                       \
-    },                                                  \
-    .queue_len = 4                                      \
+        .dma_buf_count = 4,                                                    \
+        .dma_buf_len = 256,                                                    \
+        .tx_desc_auto_clear = true                                             \
+    },                                                                         \
+    .queue_len = 4                                                             \
 }
 #else
 /**
@@ -90,24 +90,24 @@ typedef struct {
  * setup as required.
  */
 #define ESP_WAV_PLAYER_DEFAULT_CONFIG() \
-    {               \
-    .i2s_num = I2S_NUM_0,                               \
-    .i2s_pin_config = {                                 \
-        .bck_io_num = GPIO_NUM_32,                       \
-        .ws_io_num = GPIO_NUM_25,                        \
-        .data_out_num = GPIO_NUM_33,                     \
-    },                                                  \
-    .base_cfg = {                                       \
-        .mode = I2S_MODE_MASTER | I2S_MODE_TX,         \
-        .sample_rate = 22050,                           \
-        .bits_per_sample = 16,                          \
-        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,   \
+    {                                                      \
+    .i2s_num = I2S_NUM_0,                                  \
+    .i2s_pin_config = {                                    \
+        .bck_io_num = GPIO_NUM_32,                         \
+        .ws_io_num = GPIO_NUM_25,                          \
+        .data_out_num = GPIO_NUM_33,                       \
+    },                                                     \
+    .base_cfg = {                                          \
+        .mode = I2S_MODE_MASTER | I2S_MODE_TX,             \
+        .sample_rate = 22050,                              \
+        .bits_per_sample = 16,                             \
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,      \
         .communication_format = I2S_COMM_FORMAT_STAND_MSB, \
-        .dma_buf_count = 4,                             \
-        .dma_buf_len = 256,                              \
-        .tx_desc_auto_clear = true                       \
-    },                                                  \
-    .queue_len = 4                                      \
+        .dma_buf_count = 4,                                \
+        .dma_buf_len = 256,                                \
+        .tx_desc_auto_clear = true                         \
+    },                                                     \
+    .queue_len = 4                                         \
 }
 #endif
 
