@@ -20,4 +20,4 @@ tags:
 license: Apache-2.0
 
 examples:
-  - default
+  - path: examples/default
