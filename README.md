@@ -73,8 +73,10 @@ esp_wav_player_set_volume(wav_player, 50); // set initial volume
 
 ### Using ESP Component Registry
 
+[![Component Registry](https://components.espressif.com/components/qb4-dev/esp_wav_player/badge.svg)](https://components.espressif.com/components/qb4-dev/esp_wav_player)
+
 ```bash
-idf.py add-dependency "QB4-dev/esp_wav_player^1.0.0"
+idf.py add-dependency "qb4-dev/esp_wav_player=*"
 ```
 
 ### Manual Installation
